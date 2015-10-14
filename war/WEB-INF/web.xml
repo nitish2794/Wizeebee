@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<servlet>
+		<servlet-name>GetInput</servlet-name>
+		<servlet-class>com.anikora.DoCategorize</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetInput</servlet-name>
+		<url-pattern>/getinput</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DoWikiMine</servlet-name>
+		<servlet-class>com.anikora.DoWikiMine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DoWikiMine</servlet-name>
+		<url-pattern>/DoWikiMine</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DoTPMine</servlet-name>
+		<servlet-class>com.anikora.DoTPMine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DoTPMine</servlet-name>
+		<url-pattern>/DoTPMine</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DoWebopediaMine</servlet-name>
+		<servlet-class>com.anikora.DoWebopediaMine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DoWebopediaMine</servlet-name>
+		<url-pattern>/DoWebopediaMine</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DoAskmine</servlet-name>
+		<servlet-class>com.anikora.DoAskmine</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DoAskmine</servlet-name>
+		<url-pattern>/DoAskmine</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>home.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

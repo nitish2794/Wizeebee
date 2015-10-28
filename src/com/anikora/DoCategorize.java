@@ -48,24 +48,24 @@ public class DoCategorize extends HttpServlet{
 		
 		request.setAttribute("query", query);
 
-		
-//		if(query.contains("what is")||query.contains("who is")) // wikipedia
+//		
+////		if(query.contains("what is")||query.contains("who is")) // wikipedia
+////		{
+////			request.getRequestDispatcher("/DoWikiMine").forward(request, response);
+////		}
+//		 if(query.contains("learn")||query.contains("tutorial")) // tutorial point
 //		{
-//			request.getRequestDispatcher("/DoWikiMine").forward(request, response);
+//			request.getRequestDispatcher("/DoTPMine").forward(request, response);
 //		}
-		 if(query.contains("learn")||query.contains("tutorial")) // tutorial point
-		{
-			request.getRequestDispatcher("/DoTPMine").forward(request, response);
-		}
 //		else if(category=="Computers") //webopedia
 //		{
 //			request.getRequestDispatcher("/DoWebopedia").forward(request, response);
 //		}
-	else // ask and yahoo
-		{
+	//else // ask and yahoo
+		//{
 			request.getRequestDispatcher("/DoAskmine").forward(request, response);
 			
-		}
+		//}
 
 	}
 

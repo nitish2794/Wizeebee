@@ -17,9 +17,9 @@
 <body>
 
 	<div class="container">
-		<div class="jumbotron">
-			<h1>Wizee</h1>
-		</div>
+		
+			<img src="wizeelogo.jpg" class="" alt="WizeeLogo" width="300" height="100"></img>
+		<hr/>
 		<div class="row">
 			<div class="col-sm-12">
 				<ul class="nav nav-tabs">
@@ -59,12 +59,36 @@
 							mining to refine it more.</p>
 					</div>
 					<div id="team" class="tab-pane fade">
-						<h3>Team</h3>
-						<p>Some content.</p>
+						<br/><br/>
+						<div id="team-display" class="center">
+						
+						<div class="row">
+							<div class="col-sm-2"></div>
+							<div class="col-sm-2">
+							<img src="nitts.jpg" class="img-circle" alt="Ankita" width="150" height="185"></img>
+							<br/><h4>The Classifier	</h4>						
+							</div>
+							<div class="col-sm-2">
+							<img src="nitts.jpg" class="img-circle" alt="Nitish" width="150" height="185"></img>
+							<br/><h4>The Web Miner	</h4>						
+							</div>
+							<div class="col-sm-2">
+							<img src="kovid.jpg" class="img-circle" alt="Kovid" width="150" height="185"></img>	
+							<br/><h4>The NLPist	</h4>					
+							</div>
+							<div class="col-sm-2">
+							<img src="nitts.jpg" class="img-circle" alt="Raveena" width="150" height="185"></img>
+							<br/><h4>The Summariser	</h4>						
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
+						</div>
 					</div>
 					<div id="howitworks" class="tab-pane fade">
 						<h3>How it works ?</h3>
-						<p>Some content.</p>
+							<div id="howitworks" class="center">
+							<img src="dfd.jpg" class="" alt="Nitish" width="600" height="400"></img>
+							</div>
 					</div>
 				</div>
 			</div>

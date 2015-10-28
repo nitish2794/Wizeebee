@@ -65,7 +65,7 @@
 						<div class="row">
 							<div class="col-sm-2"></div>
 							<div class="col-sm-2">
-							<img src="nitts.jpg" class="img-circle" alt="Ankita" width="150" height="185"></img>
+							<img src="kovid.jpg" class="img-circle" alt="Ankita" width="150" height="185"></img>
 							<br/><h4>The Classifier	</h4>						
 							</div>
 							<div class="col-sm-2">

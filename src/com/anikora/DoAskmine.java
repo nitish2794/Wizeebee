@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 public class DoAskmine extends HttpServlet{	
 	private static final long serialVersionUID = 1L;
 
-	String query=null;
+	String query="";
 	String preurl = "http://www.ask.com/web?q=";
 	String url=null;
 
@@ -53,6 +53,7 @@ public class DoAskmine extends HttpServlet{
 		}
 		System.out.println(check);
 		request.setAttribute("answer", check);
+		request.setAttribute("asked", query);
 		request.getRequestDispatcher("/home.jsp").forward(request, response);
 		
 	}

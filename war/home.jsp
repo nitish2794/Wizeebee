@@ -35,13 +35,18 @@
 						<form action="getinput" role="form" id="searchform">
 							<h3>What do you want to ask ?</h3>
 							<div class="form-group">
-								<input type="text" name="query" class="form-control" id="query">
+								<input type="text" name="query" class="form-control" id="query"	/>
 							</div>
 							<button type="submit" class="btn btn-default">Submit</button>
 						</form><hr/>
-						<% if(request.getAttribute("answer")!=null) {%>
-						<div id="answerbox">
-							<h3>Wizee answer</h3>
+						<% if(request.getAttribute("answer")!=null) {	%>
+						<div id="questionbox">
+							<h3>Your Question</h3>
+							<%=request.getAttribute("asked")%>
+						</div>
+						<br/>
+						<div id="answerbox">							
+							<h3>Wizeebee's answer</h3>
 							<%=request.getAttribute("answer") %>
 						</div>
 						<%} %>
@@ -87,7 +92,7 @@
 					<div id="howitworks" class="tab-pane fade">
 						<h3>How it works ?</h3>
 							<div id="howitworks" class="center">
-							<img src="dfd.jpg" class="" alt="Nitish" width="600" height="400"></img>
+							<img src="dfd.jpg" class="" alt="Data Flow Diagram" width="600" height="400"></img>
 							</div>
 					</div>
 				</div>

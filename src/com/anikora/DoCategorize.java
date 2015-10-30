@@ -26,14 +26,12 @@ public class DoCategorize extends HttpServlet{
 		request.setAttribute("query", query);
 		System.out.println(ContentFilter.checker(query));
 		if(ContentFilter.checker(query) == true)
-			//if(4 > 5)
 		{
 			System.out.println("if ran");
 			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
 			request.setAttribute("asked", ContentFilter.replaceMiddle(query));
 			request.getRequestDispatcher("/home.jsp").forward(request, response);
 			return;
-			//System.out.println("if ran");
 		}	
 //		
 //		else

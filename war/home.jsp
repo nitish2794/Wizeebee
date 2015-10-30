@@ -54,13 +54,13 @@
 					<div id="features" class="tab-pane fade">
 						<h3>What is it ?</h3>
 						<p>IQP is a question-and-answer website where questions are
-							asked by users but are answered, edited and organized by an
+							asked by users but are answered, edited and organised by an
 							intelligent program.</p>
 						<p>It is intended to provide a fast way to get the answers of
 							the queries of the users dynamically with the use of an
-							intelligent program. The program will categorize the query and
+							intelligent program. The program will categorise the query and
 							then mine the web to get the appropriate answer. Also the answer
-							returned from web will be further analyzed by applying text
+							returned from web will be further analysed by applying text
 							mining to refine it more.</p>
 					</div>
 					<div id="team" class="tab-pane fade">

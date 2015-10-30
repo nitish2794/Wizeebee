@@ -25,17 +25,17 @@ public class DoCategorize extends HttpServlet{
 		System.out.println("Inside doget of categorize");
 		query=request.getParameter("query");
 		request.setAttribute("query", query);
-		if(ContentFilter.checker(query) == true)
-		{
-			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
-			request.setAttribute("asked", ContentFilter.checkerAndReplacer(query));
-			request.getRequestDispatcher("/home.jsp").forward(request, response);
-			System.out.println("if ran");
-		}	
-		
-		else
-		{
-			System.out.println("else ran");	
+//		if(ContentFilter.checker(query) == true)
+//		{
+//			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
+//			request.setAttribute("asked", ContentFilter.checkerAndReplacer(query));
+//			request.getRequestDispatcher("/home.jsp").forward(request, response);
+//			System.out.println("if ran");
+//		}	
+//		
+//		else
+//		{
+//			System.out.println("else ran");	
 		
 //		-------------------------------------------------------------------------------------
 //		String url = "http://wiki.answers.com/Q/";
@@ -86,6 +86,6 @@ public class DoCategorize extends HttpServlet{
 		}
 		
 
-	}
+	//}
 
 }

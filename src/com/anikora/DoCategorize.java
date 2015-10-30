@@ -30,7 +30,7 @@ public class DoCategorize extends HttpServlet{
 		{
 			System.out.println("if ran");
 			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
-			request.setAttribute("asked", ContentFilter.checkerAndReplacer(query));
+			request.setAttribute("asked", ContentFilter.replaceMiddle(query));
 			request.getRequestDispatcher("/home.jsp").forward(request, response);
 			return;
 			//System.out.println("if ran");

@@ -7,6 +7,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.nitts.ContentFilterfinal.ContentFilter;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -22,6 +24,14 @@ public class DoCategorize extends HttpServlet{
 	{
 		System.out.println("Inside doget of categorize");
 		query=request.getParameter("query");
+		
+		if(ContentFilter.checker(query)==true){
+			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
+			request.setAttribute("asked", query);
+			request.getRequestDispatcher("/home.jsp").forward(request, response);
+		}
+		
+		
 		String url = "http://wiki.answers.com/Q/";
 		String queryurl=query.replaceAll(" ","_");
 		url=url+queryurl;

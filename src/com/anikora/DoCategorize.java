@@ -33,9 +33,9 @@ public class DoCategorize extends HttpServlet{
 			System.out.println("if ran");
 		}	
 		
-		//else
-		//{
-		//	System.out.println("else ran");	
+		else
+		{
+			System.out.println("else ran");	
 		
 //		-------------------------------------------------------------------------------------
 //		String url = "http://wiki.answers.com/Q/";
@@ -86,6 +86,6 @@ public class DoCategorize extends HttpServlet{
 		}
 		
 
-	//}
+	}
 
 }

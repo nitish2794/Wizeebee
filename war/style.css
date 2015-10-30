@@ -4,7 +4,7 @@ html,body {
 }
 .container{
 	background-color: #FFFFFF;
-	height:100%;
+	min-height:100%;
 }
 .form-group{
 	width:100%;
@@ -24,6 +24,7 @@ html,body {
 	width:70%;
 	margin-right: 15%;
 	text-align: center;
+	margin-bottom:10%;
 }
 #questionbox{
 	border-radius: 25px;

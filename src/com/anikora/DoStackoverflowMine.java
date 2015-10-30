@@ -39,6 +39,7 @@ public class DoStackoverflowMine extends HttpServlet{
 					if(links2!=null)
 					System.out.println(links2.text());
 					request.setAttribute("answer", links2.text());
+					request.setAttribute("asked", query);
 					request.getRequestDispatcher("/home.jsp").forward(request, response);
 //					System.out.println("Source : ask.com");
 			break;

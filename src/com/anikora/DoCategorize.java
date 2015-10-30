@@ -7,7 +7,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.nitts.ContentFilterfinal.ContentFilter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,13 +24,17 @@ public class DoCategorize extends HttpServlet{
 		System.out.println("Inside doget of categorize");
 		query=request.getParameter("query");
 		request.setAttribute("query", query);
-//		if(ContentFilter.checker(query) == true)
-//		{
-//			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
-//			request.setAttribute("asked", ContentFilter.checkerAndReplacer(query));
-//			request.getRequestDispatcher("/home.jsp").forward(request, response);
-//			System.out.println("if ran");
-//		}	
+		System.out.println(ContentFilter.checker(query));
+		if(ContentFilter.checker(query) == true)
+			//if(4 > 5)
+		{
+			System.out.println("if ran");
+			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
+			request.setAttribute("asked", ContentFilter.checkerAndReplacer(query));
+			request.getRequestDispatcher("/home.jsp").forward(request, response);
+			return;
+			//System.out.println("if ran");
+		}	
 //		
 //		else
 //		{
@@ -78,11 +81,11 @@ public class DoCategorize extends HttpServlet{
 //		{
 //			request.getRequestDispatcher("/DoWebopedia").forward(request, response);
 //		}
-	//else // ask and yahoo
-		//{
+	else // ask and yahoo
+		{
 			request.getRequestDispatcher("/DoAskmine").forward(request, response);
-			
-		//}
+			return;
+		}
 		}
 		
 

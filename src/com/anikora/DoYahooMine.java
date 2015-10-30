@@ -19,8 +19,8 @@ public class DoYahooMine extends HttpServlet{
 		String url = "https://in.answers.yahoo.com/search/search_result?p=";
 		String check2="";
 		//System.out.println("Enter the query:");
-		String query=(String)request.getParameter("asked");
-		String answer=(String)request.getParameter("answer");
+		String query=(String)request.getAttribute("asked");
+		String answer=(String)request.getAttribute("answer");
 		System.out.println(query+"   "+answer);
 		String queryurl=query.replaceAll(" ","+");
 		url=url+queryurl;

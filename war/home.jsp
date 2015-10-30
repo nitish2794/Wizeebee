@@ -32,6 +32,7 @@
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">
 						<br />
+						<div id="formdiv">
 						<form action="getinput" role="form" id="searchform">
 							<h3>What do you want to ask ?</h3>
 							<div class="form-group">
@@ -39,6 +40,7 @@
 							</div>
 							<button type="submit" class="btn btn-default">Submit</button>
 						</form><hr/>
+						</div>
 						<% if(request.getAttribute("answer")!=null) {	%>
 						<div id="questionbox">
 							<h3>Your Question</h3>

@@ -9,8 +9,11 @@ html,body {
 .form-group{
 	width:100%;
 }
-#home{
+#formdiv{
 	background-color:#FFBF00;
+}
+#home{
+	
 	}
 #searchform{
 	margin-left: 15%;

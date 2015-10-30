@@ -24,42 +24,46 @@ public class DoCategorize extends HttpServlet{
 	{
 		System.out.println("Inside doget of categorize");
 		query=request.getParameter("query");
-		
-		if(ContentFilter.checker(query)==true)
-		{
-			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
-			request.setAttribute("asked", ContentFilter.checkerAndReplacer(query));
-			request.getRequestDispatcher("/home.jsp").forward(request, response);
-			System.out.println("if ran");
-		}		
-		else
-		{
-			System.out.println("else ran");	
-		String url = "http://wiki.answers.com/Q/";
-		String queryurl=query.replaceAll(" ","_");
-		url=url+queryurl;
-		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
-		//System.out.println(doc);
-		Elements links=doc.select("a.category_name" );// filter the links
-		String category="";
-		for (Element link : links) { // for all filtered links
-
-			String check = link.text().toString();
-			
-			if (null != check && check.length() > 0 )
-			{
-				
-				System.out.println(check);// prints the category
-				category=check;
-					break;
-			    //
-			}  
-			
-			
-			
-		}
-		
 		request.setAttribute("query", query);
+//		if(ContentFilter.checker(query) == true)
+//		{
+//			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
+//			request.setAttribute("asked", ContentFilter.checkerAndReplacer(query));
+//			request.getRequestDispatcher("/home.jsp").forward(request, response);
+//			System.out.println("if ran");
+//		}	
+		
+		//else
+		//{
+		//	System.out.println("else ran");	
+		
+//		-------------------------------------------------------------------------------------
+//		String url = "http://wiki.answers.com/Q/";
+//		String queryurl=query.replaceAll(" ","_");
+//		url=url+queryurl;
+//		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
+//		//System.out.println(doc);
+//		Elements links=doc.select("a.category_name" );// filter the links
+//		String category="";
+//		for (Element link : links) { // for all filtered links
+//
+//			String check = link.text().toString();
+//			
+//			if (null != check && check.length() > 0 )
+//			{
+//				
+//				System.out.println(check);// prints the category
+//				category=check;
+//					break;
+//			    //
+//			}  
+//			
+//			
+//			
+//		}
+//		----------------------------------------------------------------------------------
+//		
+		
 
 //		
 ////		if(query.contains("what is")||query.contains("who is")) // wikipedia
@@ -80,7 +84,8 @@ public class DoCategorize extends HttpServlet{
 			
 		//}
 		}
+		
 
-	}
+	//}
 
 }

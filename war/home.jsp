@@ -82,7 +82,7 @@
 							<br/><h4>The NLPist	</h4>					
 							</div>
 							<div class="col-sm-2">
-							<img src="nitts.jpg" class="img-circle" alt="Raveena" width="150" height="185"></img>
+							<img src="raveena.jpg" class="img-circle" alt="Raveena" width="150" height="185"></img>
 							<br/><h4>The Summariser	</h4>						
 							</div>
 							<div class="col-sm-2"></div>

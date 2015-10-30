@@ -13,16 +13,15 @@ import java.io.IOException;
 public class DoYahooMine extends HttpServlet{	
 	private static final long serialVersionUID = 1L;
 
-	String query="";
-	String url=null;
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
 		String url = "https://in.answers.yahoo.com/search/search_result?p=";
 		String check2="";
 		//System.out.println("Enter the query:");
-		String query=request.getParameter("asked");
-		String answer=request.getParameter("answer");
+		String query=(String)request.getParameter("asked");
+		String answer=(String)request.getParameter("answer");
+		System.out.println(query+"   "+answer);
 		String queryurl=query.replaceAll(" ","+");
 		url=url+queryurl;
 		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL

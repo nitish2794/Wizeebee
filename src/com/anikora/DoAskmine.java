@@ -52,6 +52,7 @@ public class DoAskmine extends HttpServlet{
 			}  
 		}
 		System.out.println(check);
+		System.out.println(query +" heiiiiiiii  "+check);
 		request.setAttribute("answer", check);
 		request.setAttribute("asked", query);
 		request.getRequestDispatcher("/DoYahooMine").forward(request, response);

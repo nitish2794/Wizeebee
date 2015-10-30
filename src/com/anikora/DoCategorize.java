@@ -82,7 +82,7 @@ public class DoCategorize extends HttpServlet{
 	else // ask and yahoo
 		{
 			request.getRequestDispatcher("/DoAskmine").forward(request, response);
-			return;
+			//return;
 		}
 		}
 		

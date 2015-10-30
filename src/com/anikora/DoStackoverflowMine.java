@@ -38,6 +38,7 @@ public class DoStackoverflowMine extends HttpServlet{
 					Element links2=doc2.select("td.answercell div.post-text").first();
 					if(links2!=null)
 					System.out.println(links2.text());
+					url="";
 					request.setAttribute("answer", links2.text());
 					request.setAttribute("asked", query);
 					request.getRequestDispatcher("/home.jsp").forward(request, response);

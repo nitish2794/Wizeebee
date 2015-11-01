@@ -3,16 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
 <html lang="en">
 <head>
-<title>Wizee</title>
+<title>Wizeebee</title>
 <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet"
-			href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-			<link rel="stylesheet" href="style.css">
-				<script
-					src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-				<script
-					src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="ajaxCall.js"></script>
 </head>
 <body>
 
@@ -34,7 +32,7 @@
 						
 						<div id="formdiv">
 						<br />
-						<form action="getinput" role="form" id="searchform">
+						<form role="form" id="searchform">
 							<h3>What do you want to ask ?</h3>
 							<div class="form-group">
 								<input type="text" name="query" class="form-control" id="query"	/>
@@ -42,7 +40,7 @@
 							<button type="submit" class="btn btn-default">Submit</button>
 						</form><hr/>
 						</div>
-						<% if(request.getAttribute("answer")!=null) {	%>
+<%-- 						<% if(request.getAttribute("answer")!=null) {	%> --%>
 						<div id="questionbox">
 							<h3>Your Question</h3>
 							<%=request.getAttribute("asked")%>
@@ -50,9 +48,9 @@
 						<br/>
 						<div id="answerbox">							
 							<h3>Wizeebee's answer</h3>
-							<%=request.getAttribute("answer") %>
+<%-- 							<%=request.getAttribute("answer") %> --%>
 						</div>
-						<%} %>
+<%-- 						<%} %> --%>
 					</div>
 					<div id="features" class="tab-pane fade">
 						<h3>What is it ?</h3>

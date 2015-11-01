@@ -56,9 +56,12 @@ public class DoYahooMine extends HttpServlet{
 			
 		}
 		answer = answer +"\n"+check2;
-		request.setAttribute("answer", answer);
-		request.setAttribute("asked", query);
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
+//		request.setAttribute("answer", answer);
+//		request.setAttribute("asked", query);
+//		request.getRequestDispatcher("/home.jsp").forward(request, response);
+		response.setContentType("text/plain");
+        response.getWriter().write(answer);
+        //request.getRequestDispatcher("/home.jsp").forward(request, response);
 	}
 
 }

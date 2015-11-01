@@ -3,12 +3,15 @@
  */
 $(document).ready(function() {
 	$("#searchform").submit(function() {
-        $.ajax({
-            url : 'getinput',
+        alert('Ajax called');
+		$.ajax({
+            url : '/getinput',
             data : {
-                query : $('#query').val()
+                
+            	query : $('#query').val();
             },
             success : function(responseText) {
+            	
                 $('#answerbox').text(responseText);
             }
         });

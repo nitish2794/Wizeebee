@@ -1,6 +1,7 @@
 /**
  * This js file contains the ajax function
  */
+alert("JS FILE");
 $(document).ready(function() {
 	$("#query").blur(function() {
         alert('Ajax called');

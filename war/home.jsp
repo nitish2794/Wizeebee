@@ -12,7 +12,26 @@
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.10.2.js"
     type="text/javascript"></script>
-<script src="ajaxCall.js" type="text/javascript"></script>
+<!-- <script src="ajaxCall.js" type="text/javascript"></script> -->
+<script>
+alert("JS FILE");
+$(document).ready(function() {
+	$("#searchform").submit(function() {
+        alert('Ajax called');
+		$.ajax({
+            url : 'getinput',
+            data : {
+                alert('in data');
+            	query : $('#query').val();
+            },
+            success : function(responseText) {
+            	alert('in success');
+                $('#answerbox').text(responseText);
+            }
+        });
+    });
+});
+</script>
 </head>
 <body>
 

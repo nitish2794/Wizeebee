@@ -9,6 +9,7 @@ import org.jsoup.select.Elements;
 
 
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -53,8 +54,15 @@ public class DoCategorize extends HttpServlet{
 			request.setAttribute("asked", ContentFilter.replaceMiddle(query));
 			request.getRequestDispatcher("/home.jsp").forward(request, response);
 			return;
-		}	
-
+		}
+		String querylcase = query.toLowerCase();
+		if(query.contains("wizee")||query.contains("Wizee"))
+		{
+			response.setContentType("text/plain");
+			System.out.println("sending to ajax");
+	       response.getWriter().write("I am Wizeebee. I am being developed by Team Anikora. For further details about me, contact my developers.");
+			
+		}
 		
 //		-----------------------------ANSWERS CATEGORIZER--------------------------------------------------------
 //		String url = "http://wiki.answers.com/Q/";

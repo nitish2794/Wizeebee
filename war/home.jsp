@@ -32,7 +32,7 @@
 						
 						<div id="formdiv">
 						<br />
-						<form role="form" id="searchform">
+						<form id="searchform">
 							<h3>What do you want to ask ?</h3>
 							<div class="form-group">
 								<input type="text" name="query" class="form-control" id="query"	/>
@@ -46,10 +46,10 @@
 							<%=request.getAttribute("asked")%>
 						</div>
 						<br/>
-						<div id="answerbox">							
-							<h3>Wizeebee's answer</h3>
+						<div id="answerbox">	</div>						
+<!-- 							<h3>Wizeebee's answer</h3> -->
 <%-- 							<%=request.getAttribute("answer") %> --%>
-						</div>
+						
 <%-- 						<%} %> --%>
 					</div>
 					<div id="features" class="tab-pane fade">

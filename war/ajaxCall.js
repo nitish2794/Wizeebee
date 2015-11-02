@@ -2,7 +2,7 @@
  * This js file contains the ajax function
  */
 $(document).ready(function() {
-	$("#searchform").submit(function() {
+	$("#query").blur(function() {
         alert('Ajax called');
 		$.ajax({
             url : 'getinput',

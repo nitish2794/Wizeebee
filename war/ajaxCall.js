@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#query').blur(function() {
+    $('#searchform').submit(function() {
     	alert("Ajax");
         $.ajax({
             url : 'getinput',

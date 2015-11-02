@@ -8,6 +8,7 @@ $(document).ready(function() {
             },
             success : function(responseText) {
                 $('#answerbox').text(responseText);
+                $('#questionbox').Text(query);
             }
         });
     });

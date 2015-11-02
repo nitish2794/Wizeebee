@@ -13,7 +13,7 @@
 <!-- <script src="http://code.jquery.com/jquery-1.10.2.js" -->
 <!--     type="text/javascript"></script> -->
   
-<!-- <script src="ajaxCall.js" type="text/javascript"></script> -->
+<script src="ajaxCall.js" type="text/javascript"></script>
 <script>
 </script>
 </head>
@@ -37,25 +37,26 @@
 						
 						<div id="formdiv">
 						<br />
-						<form action="getinput" id="searchform">
+						<form id="searchform">
 							<h3>What do you want to ask ?</h3>
-							<div class="form-group">
-								<input type="text" name="query" class="form-control" id="query"	/>
-							</div>
+<!-- 							<div class="form-group"> -->
+								<input type="text"  class="form-control" id="query"	/>
+<!-- 							</div> -->
 							<button type="submit" class="btn btn-default">Submit</button>
 						</form><hr/>
 						</div>
-<%-- 						<% if(request.getAttribute("answer")!=null) {	%> --%>
+						<% if(request.getAttribute("answer")!=null) {	%>
 						<div id="questionbox">
 							<h3>Your Question</h3>
 							<%=request.getAttribute("asked")%>
 						</div>
 						<br/>
-						<div id="answerbox">	</div>						
+						<div id="answerbox">						
 <!-- 							<h3>Wizeebee's answer</h3> -->
-							<%=request.getAttribute("answer") %>
+<%-- 							<%=request.getAttribute("answer") %> --%>
+						</div>	
+						<%} %>
 						
-<%-- 						<%} %> --%>
 					</div>
 					<div id="features" class="tab-pane fade">
 						<h3>What is it ?</h3>

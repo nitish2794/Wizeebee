@@ -1,18 +1,12 @@
-/**
- * This js file contains the ajax function
- */
-alert("JS FILE");
 $(document).ready(function() {
-	$("#query").blur(function() {
-        alert('Ajax called');
-		$.ajax({
+    $('#query').blur(function() {
+    	alert("Ajax");
+        $.ajax({
             url : 'getinput',
             data : {
-                alert('in data');
-            	query : $('#query').val();
+                query : $('#query').val()
             },
             success : function(responseText) {
-            	alert('in success');
                 $('#answerbox').text(responseText);
             }
         });

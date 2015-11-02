@@ -99,8 +99,11 @@ public class DoCategorize extends HttpServlet{
 		}
 	else // ask and yahoo
 		{
-			request.getRequestDispatcher("/DoAskmine").forward(request, response);
+			//request.getRequestDispatcher("/DoAskmine").forward(request, response);
 			//return;
+		response.setContentType("text/plain");
+				System.out.println("sending to ajax");
+		        response.getWriter().write("This is the answer");
 		}
 		}
 		

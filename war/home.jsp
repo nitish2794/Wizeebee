@@ -42,7 +42,7 @@
 <!-- 							<div class="form-group"> -->
 								<input type="text"  class="form-control" id="query"	/>
 <!-- 							</div> -->
-							<button type="submit" class="btn btn-default">Submit</button>
+							<button type="submit" id="subbtn" class="btn btn-default">Submit</button>
 						</form><hr/>
 						</div>
 <%-- 						<% if(request.getAttribute("answer")!=null) {	%> --%>

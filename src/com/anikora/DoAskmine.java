@@ -26,7 +26,7 @@ public class DoAskmine extends HttpServlet{
 		url=preurl+queryurl;
 		System.out.println("queryurl:"+url);
 		//PrintWriter out = response.getWriter();
-		String check=null;
+		String check="";
 		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
 		//System.out.println("doc:"+doc);
 		Elements links=doc.select("span.qna-description" );// filter the links

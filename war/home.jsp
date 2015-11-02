@@ -43,17 +43,17 @@
 								<input type="text"  class="form-control" id="query"	/>
 <!-- 							</div> -->
 <!-- 							<button type="submit" id="subbtn" class="btn btn-default">Submit</button> -->
-								<input type="button" id="subbtn" value="Submit"/>
+								<input type="button" id="subbtn" class="btn btn-default" value="Submit"/>
 						</form><hr/>
 						</div>
 <%-- 						<% if(request.getAttribute("answer")!=null) {	%> --%>
 						<div id="questionbox">
-							<h3>Your Question</h3>
-							<%=request.getAttribute("asked")%>
+							<h5>Your Question</h5>
+<%-- 							<%=request.getAttribute("asked")%> --%>
 						</div>
 						<br/>
 						<div id="answerbox">						
-							<h3>Wizeebee's answer</h3>
+							<h5>Wizeebee's answer</h5>
 <%-- 							<%=request.getAttribute("answer") %> --%>
 						</div>	
 <%-- 						<%} %> --%>

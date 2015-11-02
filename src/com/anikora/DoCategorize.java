@@ -101,8 +101,9 @@ public class DoCategorize extends HttpServlet{
 		{
 			//request.getRequestDispatcher("/DoAskmine").forward(request, response);
 			//return;
-		response.setContentType("text/plain");
+		
 				System.out.println("sending to ajax");
+				response.setContentType("text/plain");
 		        response.getWriter().write("This is the answer");
 		}
 		}

@@ -45,7 +45,7 @@
 							<button type="submit" class="btn btn-default">Submit</button>
 						</form><hr/>
 						</div>
-						<% if(request.getAttribute("answer")!=null) {	%>
+<%-- 						<% if(request.getAttribute("answer")!=null) {	%> --%>
 						<div id="questionbox">
 							<h3>Your Question</h3>
 							<%=request.getAttribute("asked")%>
@@ -55,7 +55,7 @@
 <!-- 							<h3>Wizeebee's answer</h3> -->
 <%-- 							<%=request.getAttribute("answer") %> --%>
 						</div>	
-						<%} %>
+<%-- 						<%} %> --%>
 						
 					</div>
 					<div id="features" class="tab-pane fade">

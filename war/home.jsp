@@ -8,29 +8,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="stylesheet"	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="style.css"/>
-<!-- <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.2.js"
-    type="text/javascript"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.10.2.js" -->
+<!--     type="text/javascript"></script> -->
+  
 <!-- <script src="ajaxCall.js" type="text/javascript"></script> -->
 <script>
-alert("JS FILE");
-$(document).ready(function() {
-	$("#searchform").submit(function() {
-        alert('Ajax called');
-		$.ajax({
-            url : 'getinput',
-            data : {
-                alert('in data');
-            	query : $('#query').val();
-            },
-            success : function(responseText) {
-            	alert('in success');
-                $('#answerbox').text(responseText);
-            }
-        });
-    });
-});
 </script>
 </head>
 <body>
@@ -53,7 +37,7 @@ $(document).ready(function() {
 						
 						<div id="formdiv">
 						<br />
-						<form id="searchform">
+						<form action="getinput" id="searchform">
 							<h3>What do you want to ask ?</h3>
 							<div class="form-group">
 								<input type="text" name="query" class="form-control" id="query"	/>
@@ -69,7 +53,7 @@ $(document).ready(function() {
 						<br/>
 						<div id="answerbox">	</div>						
 <!-- 							<h3>Wizeebee's answer</h3> -->
-<%-- 							<%=request.getAttribute("answer") %> --%>
+							<%=request.getAttribute("answer") %>
 						
 <%-- 						<%} %> --%>
 					</div>

@@ -21,6 +21,9 @@ html,body {
 	margin-bottom:10%;
 	background-color:#FFFFFF;
 }
+#loading{
+	text-align:center;
+}
 #formdiv{
 	background-color:#FFBF00;
 }

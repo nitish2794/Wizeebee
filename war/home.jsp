@@ -48,6 +48,7 @@
 						</form><hr/>
 						</div>
 <%-- 						<% if(request.getAttribute("answer")!=null) {	%> --%>
+						<div id="loading"></div><br/>
 						<div id="questionbox">
 							<h5>Your Question</h5>
 <%-- 							<%=request.getAttribute("asked")%> --%>

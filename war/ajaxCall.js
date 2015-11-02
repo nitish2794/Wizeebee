@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#subbtn').click(function() {
-    	
+    	$("#loading").append('<img src="ajax-loader.gif">');
         $.ajax({
             url : 'getinput',
             data : {
@@ -9,6 +9,7 @@ $(document).ready(function() {
             success : function(responseText) {
                 $('#answerbox').text(responseText);
                 $('#questionbox').text($('#query').val()).css("font-weight","Bold").css("font-size","24px");
+                $("#loading").empty();
             }
         });
     });

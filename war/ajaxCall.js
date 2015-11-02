@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#subbtn').click(function() {
-    	alert("Ajax");
+    	
         $.ajax({
             url : 'getinput',
             data : {
@@ -8,7 +8,7 @@ $(document).ready(function() {
             },
             success : function(responseText) {
                 $('#answerbox').text(responseText);
-                $('#questionbox').text($('#query').val());
+                $('#questionbox').text($('#query').val()).css("font-weight","Bold").css("font-size","24px");
             }
         });
     });

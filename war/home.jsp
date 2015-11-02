@@ -43,6 +43,7 @@
 								<input type="text"  class="form-control" id="query"	/>
 <!-- 							</div> -->
 <!-- 							<button type="submit" id="subbtn" class="btn btn-default">Submit</button> -->
+									<br/>
 								<input type="button" id="subbtn" class="btn btn-default" value="Submit"/>
 						</form><hr/>
 						</div>

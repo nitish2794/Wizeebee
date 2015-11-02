@@ -50,9 +50,11 @@ public class DoCategorize extends HttpServlet{
 		if(ContentFilter.checker(query) == true)
 		{
 			System.out.println("if ran");
-			request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
-			request.setAttribute("asked", ContentFilter.replaceMiddle(query));
-			request.getRequestDispatcher("/home.jsp").forward(request, response);
+			//request.setAttribute("answer","LOL. This is Wizeebee. Please mind your language.");
+			//request.setAttribute("asked", ContentFilter.replaceMiddle(query));
+			//request.getRequestDispatcher("/home.jsp").forward(request, response);
+			response.setContentType("text/plain");
+			response.getWriter().write("LOL. This is Wizeebee. Please mind your language.");
 			return;
 		}
 		String querylcase = query.toLowerCase();
@@ -61,7 +63,7 @@ public class DoCategorize extends HttpServlet{
 			response.setContentType("text/plain");
 			System.out.println("sending to ajax");
 	       response.getWriter().write("I am Wizeebee. I am being developed by Team Anikora. For further details about me, contact my developers.");
-			
+			return;
 		}
 		
 //		-----------------------------ANSWERS CATEGORIZER--------------------------------------------------------

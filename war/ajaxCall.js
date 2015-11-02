@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#subbtn').submit(function() {
+    $('#subbtn').click(function() {
     	alert("Ajax");
         $.ajax({
             url : 'getinput',

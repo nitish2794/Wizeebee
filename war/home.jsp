@@ -42,7 +42,8 @@
 <!-- 							<div class="form-group"> -->
 								<input type="text"  class="form-control" id="query"	/>
 <!-- 							</div> -->
-							<button type="submit" id="subbtn" class="btn btn-default">Submit</button>
+<!-- 							<button type="submit" id="subbtn" class="btn btn-default">Submit</button> -->
+								<input id="subbtn" type="button" value="Submit"/>
 						</form><hr/>
 						</div>
 <%-- 						<% if(request.getAttribute("answer")!=null) {	%> --%>
@@ -52,7 +53,7 @@
 						</div>
 						<br/>
 						<div id="answerbox">						
-<!-- 							<h3>Wizeebee's answer</h3> -->
+							<h3>Wizeebee's answer</h3>
 <%-- 							<%=request.getAttribute("answer") %> --%>
 						</div>	
 <%-- 						<%} %> --%>

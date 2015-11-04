@@ -28,25 +28,8 @@ public class DoCategorize extends HttpServlet{
 		query=request.getParameter("query");
 		request.setAttribute("query", query);
 		System.out.println(ContentFilter.checker(query));
-		
-		//-----------------------------------YAHOO CATEGORIZER------------------------------------------------	
-		
-				String url = "https://in.answers.yahoo.com/search/search_result?p=";
-				//System.out.println("Enter the query:");
-				
-				String queryurl=query.replaceAll(" ","+");
-				url=url+queryurl;
-				Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
-				//System.out.println(doc);
-				Element links=doc.select("div.question-meta" ).first();// filter the links
-				int i=0;
-				String check = links.text().toString();
-				int ind = check.indexOf("•");
-				check  = check.substring(ind+2);	
-				System.out.println(check);
-				category = check;
-				
-		//----------------------------------------------------------------------------------------------------
+
+		System.out.println("Query:"+query);
 		if(ContentFilter.checker(query) == true)
 		{
 			System.out.println("if ran");
@@ -58,66 +41,87 @@ public class DoCategorize extends HttpServlet{
 			return;
 		}
 		String querylcase = query.toLowerCase();
-		if(query.contains("wizee")||query.contains("Wizee"))
+		System.out.println("Query:"+querylcase);
+		if(querylcase.contains("wize")||querylcase.contains("wizeebee"))
 		{
 			response.setContentType("text/plain");
 			System.out.println("sending to ajax");
-	       response.getWriter().write("I am Wizeebee. I am being developed by Team Anikora. For further details about me, contact my developers.");
+			response.getWriter().write("I am Wizeebee. I am being developed by Team Anikora. For further details about me, contact my developers.");
 			return;
 		}
-		
-//		-----------------------------ANSWERS CATEGORIZER--------------------------------------------------------
-//		String url = "http://wiki.answers.com/Q/";
-//		String queryurl=query.replaceAll(" ","_");
-//		url=url+queryurl;
-//		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
-//		//System.out.println(doc);
-//		Elements links=doc.select("a.category_name" );// filter the links
-//		String category="";
-//		for (Element link : links) { // for all filtered links
-//
-//			String check = link.text().toString();
-//			
-//			if (null != check && check.length() > 0 )
-//			{
-//				
-//				System.out.println(check);// prints the category
-//				category=check;
-//					break;
-//			    //
-//			}  
-//			
-//			
-//			
-//		}
-//		----------------------------------------------------------------------------------
-//		
+		//-----------------------------------YAHOO CATEGORIZER------------------------------------------------	
+
+		String url = "https://in.answers.yahoo.com/search/search_result?p=";
+		//System.out.println("Enter the query:");
+
+		String queryurl=query.replaceAll(" ","+");
+		url=url+queryurl;
+		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
+		//System.out.println(doc);
+		Element links=doc.select("div.question-meta" ).first();// filter the links
+		int i=0;
+		String check = links.text().toString();
+		int ind = check.indexOf("•");
+		check  = check.substring(ind+2);	
+		System.out.println(check);
+		category = check;
+
+		//----------------------------------------------------------------------------------------------------
 
 
-//		
-////		if(query.contains("what is")||query.contains("who is")) // wikipedia
-////		{
-////			request.getRequestDispatcher("/DoWikiMine").forward(request, response);
-////		}
-//		 if(query.contains("learn")||query.contains("tutorial")) // tutorial point
+		//		-----------------------------ANSWERS CATEGORIZER--------------------------------------------------------
+		//		String url = "http://wiki.answers.com/Q/";
+		//		String queryurl=query.replaceAll(" ","_");
+		//		url=url+queryurl;
+		//		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
+		//		//System.out.println(doc);
+		//		Elements links=doc.select("a.category_name" );// filter the links
+		//		String category="";
+		//		for (Element link : links) { // for all filtered links
+		//
+		//			String check = link.text().toString();
+		//			
+		//			if (null != check && check.length() > 0 )
+		//			{
+		//				
+		//				System.out.println(check);// prints the category
+		//				category=check;
+		//					break;
+		//			    //
+		//			}  
+		//			
+		//			
+		//			
+		//		}
+		//		----------------------------------------------------------------------------------
+		//		
+
+
+		//		
+		////		if(query.contains("what is")||query.contains("who is")) // wikipedia
+		////		{
+		////			request.getRequestDispatcher("/DoWikiMine").forward(request, response);
+		////		}
+		//		 if(query.contains("learn")||query.contains("tutorial")) // tutorial point
+		//		{
+		//			request.getRequestDispatcher("/DoTPMine").forward(request, response);
+		//		}
+		//-----------------------------------------------------------------------------------------------------
+//		if(category.equals("Programming & Design") )//webopedia
 //		{
-//			request.getRequestDispatcher("/DoTPMine").forward(request, response);
+//			request.getRequestDispatcher("/DoStackoverflowMine").forward(request, response);
 //		}
-		if(category.equals("Programming & Design") )//webopedia
-		{
-			request.getRequestDispatcher("/DoStackoverflowMine").forward(request, response);
-		}
-	else // ask and yahoo
-		{
+//		else // ask and yahoo
+//		{
 			request.getRequestDispatcher("/DoAskmine").forward(request, response);
 			//return;
-		
-				System.out.println("sending to ajax");
-//				response.setContentType("text/plain");
-//		        response.getWriter().write("This is the answer");
-		}
-		}
-		
+
+			System.out.println("sending to ajax");
+			//				response.setContentType("text/plain");
+			//		        response.getWriter().write("This is the answer");
+		//}
+	}
+
 
 	//}
 

@@ -12,6 +12,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-name>GetInput</servlet-name>
 		<url-pattern>/getinput</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SendMail</servlet-name>
+		<servlet-class>com.anikora.SendMail</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendMail</servlet-name>
+		<url-pattern>/SendMail</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>DoWikiMine</servlet-name>

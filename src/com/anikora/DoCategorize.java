@@ -10,6 +10,7 @@ import org.jsoup.select.Elements;
 
 
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -24,6 +25,7 @@ public class DoCategorize extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		try{
 		System.out.println("Inside doget of DoCategorize");
 		query=request.getParameter("query");
 		request.setAttribute("query", query);
@@ -47,6 +49,13 @@ public class DoCategorize extends HttpServlet{
 			response.setContentType("text/plain");
 			System.out.println("sending to ajax");
 			response.getWriter().write("I am Wizeebee. I am being developed by Team Anikora. For further details about me, contact my developers.");
+			return;
+		}
+		String[] queryarr = query.split(" ");
+		System.out.println(queryarr.length);
+		if(queryarr.length<=3)
+		{
+			request.getRequestDispatcher("/DoWikiMine").forward(request, response);
 			return;
 		}
 		//-----------------------------------YAHOO CATEGORIZER------------------------------------------------	
@@ -123,6 +132,15 @@ public class DoCategorize extends HttpServlet{
 			System.out.println("sending to ajax");
 			//				response.setContentType("text/plain");
 			//		        response.getWriter().write("This is the answer");
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println("An exception occurred");
+			String error=e.toString();
+			request.setAttribute("body",error);
+			request.setAttribute("query",query);
+			request.getRequestDispatcher("/SendMail").forward(request, response);
 		}
 	}
 

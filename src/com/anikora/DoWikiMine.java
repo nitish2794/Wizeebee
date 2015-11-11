@@ -20,6 +20,7 @@ public class DoWikiMine extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		try{
 		System.out.println("Inside doget");
 		query=request.getParameter("query");
 		/// removing stopwords
@@ -68,8 +69,23 @@ public class DoWikiMine extends HttpServlet{
 		//System.out.println("\n"+check+":"+check_url);
 		System.out.println("\n"+data2);
 		//System.out.println("Source : wikipedia.com");
-		request.setAttribute("answer", data2);
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
+		//-------------------------------------------when not using ajax---------------------
+		//request.setAttribute("answer", data2);
+		//request.getRequestDispatcher("/home.jsp").forward(request, response);
+		//------------------------------------------------------------------------------------
+		response.setContentType("text/plain");
+		System.out.println("sending to ajax from wikimine");
+		response.getWriter().write( data2);
+		}
+		catch(Exception e)
+		{
+			System.out.println("An exception occurred");
+			String error=e.toString();
+			request.setAttribute("body",error);
+			request.setAttribute("query",query);
+			request.getRequestDispatcher("/SendMail").forward(request, response);
+		}
+		
 	}
 	public static String capitalize(String inline) {
 		String words[]=inline.split(" ");

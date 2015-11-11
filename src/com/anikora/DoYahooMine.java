@@ -16,10 +16,12 @@ public class DoYahooMine extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		String query="";
+		try{
 		String url = "https://in.answers.yahoo.com/search/search_result?p=";
 		String check2="";
 		//System.out.println("Enter the query:");
-		String query=(String)request.getAttribute("asked");
+		query=(String)request.getAttribute("asked");
 		String answer=(String)request.getAttribute("answer");
 		System.out.println(query+"   "+answer);
 		String queryurl=query.replaceAll(" ","+");
@@ -63,6 +65,15 @@ public class DoYahooMine extends HttpServlet{
 		System.out.println("sending to ajax");
        response.getWriter().write(answer);
         //request.getRequestDispatcher("/home.jsp").forward(request, response);
+		}
+		catch(Exception e)
+		{
+			System.out.println("An exception occurred");
+			String error=e.toString();
+			request.setAttribute("body",error);
+			request.setAttribute("query",query);
+			request.getRequestDispatcher("/SendMail").forward(request, response);
+		}
 	}
 
 }

@@ -107,19 +107,19 @@ public class DoCategorize extends HttpServlet{
 		//			request.getRequestDispatcher("/DoTPMine").forward(request, response);
 		//		}
 		//-----------------------------------------------------------------------------------------------------
-//		if(category.equals("Programming & Design") )//webopedia
-//		{
-//			request.getRequestDispatcher("/DoStackoverflowMine").forward(request, response);
-//		}
-//		else // ask and yahoo
-//		{
+		if(category.equals("Programming & Design") )//webopedia
+		{
+			request.getRequestDispatcher("/DoStackoverflowMine").forward(request, response);
+		}
+		else // ask and yahoo
+		{
 			request.getRequestDispatcher("/DoAskmine").forward(request, response);
 			//return;
 
 			System.out.println("sending to ajax");
 			//				response.setContentType("text/plain");
 			//		        response.getWriter().write("This is the answer");
-		//}
+		}
 	}
 
 

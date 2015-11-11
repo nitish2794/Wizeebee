@@ -21,6 +21,7 @@ public class DoWebopediaMine extends HttpServlet{
 	{
 		System.out.println("Inside doget");
 		query=request.getParameter("query");
+		String answer=(String)request.getAttribute("answer");
 		String url = "http://www.webopedia.com/sgsearch/results?q=";
 		//System.out.println("Enter the query:");
 		String queryurl=query.replaceAll(" ","+");
@@ -45,8 +46,12 @@ public class DoWebopediaMine extends HttpServlet{
 			}  
 						
 		}
-		request.setAttribute("answer", check);
-		request.getRequestDispatcher("/home.jsp").forward(request, response);
+		answer = answer +"\n"+check;
+		//request.setAttribute("answer", check);
+		//request.getRequestDispatcher("/home.jsp").forward(request, response);
+		response.setContentType("text/plain");
+		System.out.println("sending to ajax");
+		response.getWriter().write( answer);
 		
 	}
 

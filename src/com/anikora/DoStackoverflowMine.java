@@ -20,11 +20,13 @@ public class DoStackoverflowMine extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		System.out.println("Stackoverflow called");
 		query=request.getParameter("query");
 		
 		//String query="how to run garbage collector";
 		String queryurl=query.replaceAll(" ","+");
 		url=url+queryurl;
+		System.out.println(url);
 		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
 		//System.out.println(doc);
 		Elements links=doc.select("div.result-link a" );// filter the links
@@ -39,12 +41,13 @@ public class DoStackoverflowMine extends HttpServlet{
 					if(links2!=null)
 					System.out.println(links2.text());
 					url="";
-					//request.setAttribute("answer", links2.text());
-					//request.setAttribute("asked", query);
-					//request.getRequestDispatcher("/home.jsp").forward(request, response);
-					response.setContentType("text/plain");
-					System.out.println("sending to ajax");
-					response.getWriter().write( links2.text());
+					request.setAttribute("answer",links2.text());
+					request.setAttribute("asked", query);
+					request.getRequestDispatcher("/DoWebopediaMine").forward(request, response);
+					//response.setContentType("text/plain");
+					//System.out.println("sending to ajax");
+					//response.getWriter().write( links2.text());
+					
 //					System.out.println("Source : ask.com");
 			break;
 		}

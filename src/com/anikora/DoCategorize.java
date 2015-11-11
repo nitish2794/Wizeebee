@@ -24,7 +24,7 @@ public class DoCategorize extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
-		System.out.println("Inside doget of categorize");
+		System.out.println("Inside doget of DoCategorize");
 		query=request.getParameter("query");
 		request.setAttribute("query", query);
 		//System.out.println(ContentFilter.checker(query));
@@ -51,21 +51,25 @@ public class DoCategorize extends HttpServlet{
 		}
 		//-----------------------------------YAHOO CATEGORIZER------------------------------------------------	
 
-//		String url = "https://in.answers.yahoo.com/search/search_result?p=";
-//		//System.out.println("Enter the query:");
-//
-//		String queryurl=query.replaceAll(" ","+");
-//		url=url+queryurl;
-//		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
-//		//System.out.println(doc);
-//		Element links=doc.select("div.question-meta" ).first();// filter the links
-//		int i=0;
-//		String check = links.text().toString();
-//		int ind = check.indexOf("•");
-//		check  = check.substring(ind+2);	
-//		System.out.println(check);
-//		category = check;
+		String url = "https://in.answers.yahoo.com/search/search_result?p=";
+		//System.out.println("Enter the query:");
 
+		String queryurl=query.replaceAll(" ","+");
+		url=url+queryurl;
+		Document doc = Jsoup.connect(url).get(); // getting the HTML of the URL
+		//System.out.println(doc);
+		Element links=doc.select("div.question-meta" ).first();// filter the links
+		if(links!=null)
+		{
+		int i=0;
+		String check = links.text().toString();
+		int ind = check.indexOf("•");
+		check  = check.substring(ind+2);	
+		System.out.println(check);
+		category = check;
+		}
+		query="";
+		
 		//----------------------------------------------------------------------------------------------------
 
 
@@ -107,7 +111,7 @@ public class DoCategorize extends HttpServlet{
 		//			request.getRequestDispatcher("/DoTPMine").forward(request, response);
 		//		}
 		//-----------------------------------------------------------------------------------------------------
-		if(category.equals("Programming & Design") )//webopedia
+		if(category.equals("Programming & Design") ||category.equals("Other - Computers") )//webopedia
 		{
 			request.getRequestDispatcher("/DoStackoverflowMine").forward(request, response);
 		}

@@ -8,6 +8,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 
 public class DoYahooMine extends HttpServlet{	
@@ -69,7 +71,10 @@ public class DoYahooMine extends HttpServlet{
 		catch(Exception e)
 		{
 			System.out.println("An exception occurred");
-			String error=e.toString();
+			StringWriter sw = new StringWriter();
+			PrintWriter pw = new PrintWriter(sw);
+			e.printStackTrace(pw);
+			String error = sw.toString(); // stack trace as a string
 			request.setAttribute("body",error);
 			request.setAttribute("query",query);
 			request.getRequestDispatcher("/SendMail").forward(request, response);

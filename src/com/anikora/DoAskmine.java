@@ -7,9 +7,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.concurrent.TimeoutException;
 
 
 public class DoAskmine extends HttpServlet{	
@@ -18,6 +21,12 @@ public class DoAskmine extends HttpServlet{
 	String query="";
 	String preurl = "http://www.ask.com/web?q=";
 	String url=null;
+	public static String getStackTrace(final Throwable throwable) {
+	     final StringWriter sw = new StringWriter();
+	     final PrintWriter pw = new PrintWriter(sw, true);
+	     throwable.printStackTrace(pw);
+	     return sw.getBuffer().toString();
+	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
@@ -65,13 +74,11 @@ public class DoAskmine extends HttpServlet{
 			request.setAttribute("asked", query);		
 			request.getRequestDispatcher("/DoYahooMine").forward(request, response);
 		}
+		
 		catch(Exception e)
 		{
 			System.out.println("An exception occurred");
-			StringWriter sw = new StringWriter();
-			PrintWriter pw = new PrintWriter(sw);
-			e.printStackTrace(pw);
-			String error = sw.toString(); // stack trace as a string
+			String error =getStackTrace(e); // stack trace as a string
 			request.setAttribute("body",error);
 			request.setAttribute("query",query);
 			request.getRequestDispatcher("/SendMail").forward(request, response);

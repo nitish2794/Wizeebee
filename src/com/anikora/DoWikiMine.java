@@ -2,6 +2,7 @@ package com.anikora;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,12 +19,18 @@ public class DoWikiMine extends HttpServlet{
 	String query=null;
 	String preurl = "http://www.ask.com/web?q=";
 	String url=null;
-
+	public static String getStackTrace(final Throwable throwable) {
+	     final StringWriter sw = new StringWriter();
+	     final PrintWriter pw = new PrintWriter(sw, true);
+	     throwable.printStackTrace(pw);
+	     return sw.getBuffer().toString();
+	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
 		try{
 		System.out.println("Inside doget");
 		query=request.getParameter("query");
+		request.setAttribute("query", query);
 		/// removing stopwords
 		query.replaceAll("what is","").replaceAll("who is","").replaceAll(" ","");
 		
@@ -78,14 +85,15 @@ public class DoWikiMine extends HttpServlet{
 		System.out.println("sending to ajax from wikimine");
 		response.getWriter().write( data2);
 		}
+		catch(HttpStatusException e)
+		{
+			request.getRequestDispatcher("/DoAskmine").forward(request, response);
+		}
 		catch(Exception e)
 		{
 			System.out.println("An exception occurred");
-			StringWriter sw = new StringWriter();
-			PrintWriter pw = new PrintWriter(sw);
-			e.printStackTrace(pw);
-			String error = sw.toString(); // stack trace as a string
-			
+			String error = getStackTrace(e); // stack trace as a string
+			System.out.println("----------------This is error sent to mail-----------\n"+error);
 			//String error=e.toString();
 			request.setAttribute("body",error);
 			request.setAttribute("query",query);

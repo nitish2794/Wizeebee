@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/nitish/NITISH SEMESTER 5/jsoup-1.8.1.jar"/>
 	<classpathentry kind="lib" path="C:/nitish/NITISH SEMESTER 7/Project/Intelligent Query Processor &amp; Resolver/anikora-confil.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_40"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

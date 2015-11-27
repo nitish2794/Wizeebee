@@ -15,7 +15,12 @@ import java.io.StringWriter;
 public class DoYahooMine extends HttpServlet{	
 	private static final long serialVersionUID = 1L;
 
-
+	public static String getStackTrace(final Throwable throwable) {
+	     final StringWriter sw = new StringWriter();
+	     final PrintWriter pw = new PrintWriter(sw, true);
+	     throwable.printStackTrace(pw);
+	     return sw.getBuffer().toString();
+	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
 		String query="";
@@ -71,10 +76,8 @@ public class DoYahooMine extends HttpServlet{
 		catch(Exception e)
 		{
 			System.out.println("An exception occurred");
-			StringWriter sw = new StringWriter();
-			PrintWriter pw = new PrintWriter(sw);
-			e.printStackTrace(pw);
-			String error = sw.toString(); // stack trace as a string
+			String error = getStackTrace(e); // stack trace as a string
+			System.out.println("----------------This is error sent to mail-----------\n"+error);
 			request.setAttribute("body",error);
 			request.setAttribute("query",query);
 			request.getRequestDispatcher("/SendMail").forward(request, response);

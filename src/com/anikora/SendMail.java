@@ -4,6 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -19,13 +21,15 @@ public class SendMail extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 
 	public void service (HttpServletRequest req, HttpServletResponse resp)throws IOException, ServletException{
 
 		Properties props = new Properties();
 		Session session = Session.getDefaultInstance(props, null);
 
-		String body =req.getParameter("body");
+		String body =req.getAttribute("body").toString(); 
+		System.out.println(body);
 		String query =req.getParameter("query");
 		String to="nitish2794@gmail.com";//req.getAttribute("to").toString();
 		//String frommail=req.getParameter("fromemail");//req.getAttribute("from").toString();
